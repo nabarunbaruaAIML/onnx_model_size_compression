@@ -24,7 +24,7 @@ Original weights size:
 However the  size upon conversion spiked to 340 mb.
 
 Onnx weights size:
-![ONNX converted Weights size](./documentation_elements/sizesecond.jpg)
+![ONNX converted Weights size](./documentation_elements/sizesecond.png)
 
 
 ## Excerpt from ONNX Team on the Correctness of the solution: 
@@ -38,7 +38,7 @@ ie,  Compare each pair of initializers, when they are the same, just remove one 
 Post implementation : 
 
 Compressed Onnx weights size:
-![New onnx Weights size](./documentation_elements/sizethird.jpg)
+![New onnx Weights size](./documentation_elements/sizethird.png)
 
 
 
@@ -50,4 +50,6 @@ pip install --upgrade transformers sentencepiece
 pip install --upgrade onnxruntime
 pip install --upgrade onnxruntime-tools
 ```
+
+P.S: We tested this for any unwanted deviations. Turns out theres none and it works perfectly.
 
