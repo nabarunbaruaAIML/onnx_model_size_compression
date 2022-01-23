@@ -34,6 +34,8 @@ Using the below python Script we can remove duplication of weights, and reduce m
 ie,  Compare each pair of initializers, when they are the same, just remove one initializer, and update all reference of it to the other initializer."
 #### """ONNX Team @tianleiwu"""
 
+![fromtheOfficialRepo](./documentation_elements/fromrepo.png)
+
 
 Post implementation : 
 
