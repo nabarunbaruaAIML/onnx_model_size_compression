@@ -80,7 +80,8 @@ Here, onnxruntime.quantization.quantize to apply quantization on the HuggingFace
 
 
 
-# Thirdly: by Optimizer from ONNX Runtime . However this is not recommended because , the num_heads,hidden_size if not chosen correctly can hamper the trained model.However , its straight forward to use .
+# Thirdly: by Optimizer from ONNX Runtime .
+### However this is not recommended because , the num_heads,hidden_size if not chosen correctly can hamper the trained model.However , its straight forward to use .
 
 
 ```bash
