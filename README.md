@@ -1,4 +1,7 @@
-# onnx_model_size_compression
+# Ways to optimize or compress (without loss of mettle) 
+
+
+# First : COMPRESSION :  ONNX model size compression using removal of shared layers that which can be considered duplicate. 
 Just a simple pythonic way of reducing the onnx converted model. This implementation is based on a tip by the Team ONNX .
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FarjunKumbakkara%2Fonnx_model_size_compression&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
@@ -54,5 +57,53 @@ pip install --upgrade onnxruntime-tools
 ```
 
 
-P.S: We tested this for any unwanted deviations. Turns out theres none and it works perfectly.
+# Second : Dynmic Quantization :  Via performing quantization on a converted ONNX model. 
+
+Up on Dynamic Quantization 
+
+
+```bash
+.....
+ quantize_dynamic(onnx_model_path,
+                     quantized_model_path,
+                     weight_type=QuantType.QInt8)......
+
+```
+Here, onnxruntime.quantization.quantize to apply quantization on the HuggingFace BERT model. It supports dynamic quantization with IntegerOps and static quantization with QLinearOps. For activation ONNXRuntime supports only uint8 format for now, and for weight ONNXRuntime supports both int8 and uint8 format.Here we are using dynamic quantization for BERT model (Albert...etc too) and use int8 for weights.
+
+
+![Quantization](./documentation_elements/FouthOne.png)
+
+
+
+
+
+
+# Thirdly: by Optimizer from ONNX Runtime . However this is not recommended because , the num_heads,hidden_size if not chosen correctly can hamper the trained model.However , its straight forward to use .
+
+
+```bash
+.....
+# optimize transformer-based models with onnxruntime-tools
+from onnxruntime_tools import optimizer
+from onnxruntime_tools.transformers.onnx_model_bert import BertOptimizationOptions
+# disable embedding layer norm optimization for better model size reduction
+opt_options = BertOptimizationOptions('bert')
+opt_options.enable_embed_layer_norm = False
+opt_model = optimizer.optimize_model(
+    'bert.onnx',
+    'bert', 
+    num_heads=12,
+    hidden_size=768,
+    optimization_options=opt_options)
+opt_model.save_model_to_file('bert.opt.onnx')
+
+```
+
+
+This could give you a lot of warnings as  'onnxruntime_tools ' is deprecated now .Thuw we recommend that you use the First method which is the best easiest and works like a charm.
+P.S: We tested these for any unwanted deviations. Turns out theres none and it works perfectly.
+
+
+
 
