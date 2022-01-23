@@ -58,7 +58,7 @@ pip install --upgrade onnxruntime-tools
 ```
 
 
-# Second : Dynmic Quantization :  Via performing quantization on a converted ONNX model. 
+# Second : Dynamic Quantization :  Via performing quantization on a converted ONNX model. 
 
 Up on Dynamic Quantization 
 
