@@ -1,4 +1,5 @@
-# Ways to optimize or compress (without loss of mettle) 
+# Ways to optimize or compress your ONNX Model! 
+### (without loss of mettle) 
 
 
 # First : COMPRESSION :  ONNX model size compression using removal of shared layers that which can be considered duplicate. 
@@ -72,7 +73,7 @@ Up on Dynamic Quantization
 Here, onnxruntime.quantization.quantize to apply quantization on the HuggingFace BERT model. It supports dynamic quantization with IntegerOps and static quantization with QLinearOps. For activation ONNXRuntime supports only uint8 format for now, and for weight ONNXRuntime supports both int8 and uint8 format.Here we are using dynamic quantization for BERT model (Albert...etc too) and use int8 for weights.
 
 
-![Quantization](./documentation_elements/FouthOne.png)
+![Quantization](./documentation_elements/FourthOne.png)
 
 
 
