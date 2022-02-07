@@ -13,8 +13,8 @@
 
 
 ## Synopsis:
-## How we converted our AlBERT model trained for text classification to ONNX runtime and how it suddenly to 341mb from 46.8mb of size( .bin weights file).
-When converted to the ONNX runtime , it became 345mb .We tried all optimizations on python before the conversion. However, the way out was to convert the .onnx converted weights to a compressed, quantized version .Details of which are laid out below:
+## How we converted our ALBERT model trained for text classification to ONNX runtime and how it suddenly increased to 345mb from 47mb of size( .bin weights file).
+We tried all optimizations on python before the conversion. However, the way out was to convert the .onnx converted weights to a compressed, quantized version .Details of which are laid out below:
 
 
 ## Why ONNX ? 
@@ -23,8 +23,8 @@ standard to convert your trained models(weights) into ONNX compliant ONNX models
 another format is a painful task.There arises a lot of unprecedented issues and exceptions, resolving which could eat up your development/Experiment time .Hence, Its the best way of making sure that your model does not get into a framework lock.
 Cross-platform compliance makes it easy for deployment which we will discuss in the coming sections
 
-2. Faster Inference : The inference is faster in the ONNX runtime as the runtime itself is build in C and as its the closest we can get to the machine .Its really fast in execution.
-3. Env agnostic deployment : Although , your training stage would be in python , ONXX now gives the flexibility to deploy your trained weights into multiple other stacks or 
+2. Faster Inference : The inference is faster in the ONNX runtime as the runtime itself is built in C and as its the closest we can get to the machine .Its really fast in execution.
+3. Env agnostic deployment : Although , your training stage would be in python , ONNX now gives the flexibility to deploy your trained weights into multiple other stacks or 
  enviroments such as  C#/C++/Java etc.  
 
 In essence , ONNX helps achieve high degree of Interoperability between architectures and  hardwares. 
@@ -43,9 +43,9 @@ Click [ONNX](https://github.com/arjunkumbakkara/CML_with_DVC_on_Transformer_NLP/
 
 ## The Catch: 
 The catch here could however be that a straight up conversion might spike the overall size of your model as can be seen in the images attached below (We have used ALBERT Transformer as an example)
-Post training of the model , the size obtained was 47mb , But after a straight conversion to ONNX runtime as described in the above section the size for increased 40x 
-which is it became 345mb which is way too much for any inferencing activity. 
-Thus , we had to undertake few work arounds which are explained below for your easier transition into ONNX runtimes.
+Post training of the model , the size obtained was 47mb , But after a straight conversion to ONNX runtime as described in the above section the size  increased 40x 
+which is way too much for any inferencing activity. 
+Thus , we had to undertake few work arounds which are explained below for your easier transition into ONNX runtimes and its effective use.
 
 
 ## Ways to optimize the conversion without the loss of any mettle!
