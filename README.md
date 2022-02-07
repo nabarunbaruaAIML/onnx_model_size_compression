@@ -5,11 +5,9 @@
 
 ## Authors
 ## Nabarun Barua 
-- [Git](https://github.com/nabarunbaruaAIML)
-- [LinkedIn](https://www.linkedin.com/in/nabarun-barua-aiml-engineer/)
+[Git](https://github.com/nabarunbaruaAIML)/[LinkedIn](https://www.linkedin.com/in/nabarun-barua-aiml-engineer/)
 ## Arjun Kumbakkara 
-- [Git](https://github.com/arjunKumbakkara)
-- [LinkedIn](https://www.linkedin.com/in/arjunkumbakkara/)
+[Git](https://github.com/arjunKumbakkara)/[LinkedIn](https://www.linkedin.com/in/arjunkumbakkara/)
 
 
 ## Synopsis:
@@ -37,8 +35,8 @@ As can be seen below , conversion to ONNX runtime is a matter calling an API (Hu
 ![ONNX Conversion](./documentation_elements/onnx.jpeg)
 
 For further understanding ,feel free to sail over to this training pipeline built by us and check out the ONNX stage from it.
-Click [ONNX](https://github.com/arjunkumbakkara/CML_with_DVC_on_Transformer_NLP/blob/main/src/stage_04_onnx.py)
-[Note:If you want to understand the entire flow, then head over to this post which has the entire training pipeline explained with code and architecture. ](https://medium.com/@arjunkumbakkara/continuous-machine-learning-on-huggingface-transformer-with-dvc-including-weights-biases-1bc4520d210)
+Click [ONNX](https://github.com/nabarunbaruaAIML/CML_with_DVC_on_Transformer_NLP/blob/main/src/stage_04_onnx.py)
+[Note:If you want to understand the entire flow, then head over to this post which has the entire training pipeline explained with code and architecture. ](https://medium.com/mlearning-ai/continuous-machine-learning-on-huggingface-transformer-with-dvc-including-weights-biases-6a909983e48e)
 
 
 ## The Catch: 
